@@ -34,7 +34,9 @@ none 기억 x 새로고침 하면 바로 로그아웃 됨
 
 ❓ 2.4  `App.js` 에서 `useEffect` 의 역할? 기능?
 
-❓ 2.4 `App.js`  `useEffect` 안의 `onAuthStateChanged` 는 왜 user 값이 null 을 반환할 때, 즉 log in / sign in / log out 중 어떤 기능도 수행되지 않았을 때조차 실행되는가?
+⛳ (on Scrum) ❓ 2.4 `App.js`  `useEffect` 안의 `onAuthStateChanged` 는 왜 user 값이 null 을 반환할 때, 즉 log in / sign in / log out 중 어떤 기능도 수행되지 않았을 때조차 실행되는가?
+
+⛳ (on Scrum) ❓ 2.4 What is the reason that `onAuthStateChanged`(in the `App.js`  `useEffect`) runs even if when `user` value equals to `null`? I think `user` value equals to 'null' indicate that none of the tasks(log in / sign in / log out) were not perforemd, then I think that since `onAuthStateChanged` is a listener for login/ sign in/ log out, it should not be implemented but actually it runs even if so.
 
 ❓ `<form>` 이랑 `<input type="submit">` 에 대해서 잘 알아보자
 
@@ -47,7 +49,9 @@ none 기억 x 새로고침 하면 바로 로그아웃 됨
     } = e;
 ```
 
-❓ 3.1 Home > `onSubmit()` 서브밋 할 때 clear 안되는데 원래 그런건가? 그렇다면 어떻게 클리어 하지?
+⛳ (on Scrum) ❓ 3.1 Home > `onSubmit()` 서브밋 할 때 clear 안되는데 원래 그런건가? 그렇다면 어떻게 클리어 하지?
+
+⛳ (on Scrum) ❓ 3.1 about: Home > `onSubmit()`. When click submit, my <input> texts in a remain intact. Is this supposed to be like that? Or is it just for my case? What is the solution to clear that 
 
 ❓`setState((prev) => !prev)` 같이 인자로 함수 전달하는 경우 잘 살펴보자
 
