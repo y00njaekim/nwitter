@@ -49,7 +49,7 @@ none 기억 x 새로고침 하면 바로 로그아웃 됨
 
 ❓ 3.1 Home > `onSubmit()` 서브밋 할 때 clear 안되는데 원래 그런건가? 그렇다면 어떻게 클리어 하지?
 
-❓`setState((prev) => !prev) 같이 인자로 함수 전달하는 경우 잘 살펴보자
+❓`setState((prev) => !prev)` 같이 인자로 함수 전달하는 경우 잘 살펴보자
 
 
 
