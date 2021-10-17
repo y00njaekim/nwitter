@@ -40,7 +40,7 @@ none 기억 x 새로고침 하면 바로 로그아웃 됨
 
 ❓ `<form>` 이랑 `<input type="submit">` 에 대해서 잘 알아보자
 
-❓ 아래 코드 js ES6 잘 파악하자
+❓ 아래 코드 js ES6 잘 파악하자. 내 [블로그](https://y00njaekim.github.io/react/input/) 와 비교해보자.
 
 ```react
   const onChange = (e) => {
