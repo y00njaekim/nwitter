@@ -4,7 +4,7 @@
 
 🚩 `event.preventDefault();`
 
- 기본으로 정의된 이벤트를 작동하지 못하게 하는 메서드
+기본으로 정의된 이벤트를 작동하지 못하게 하는 메서드
 
 <br/>
 
@@ -48,15 +48,17 @@ const onSubmit = async (event) => {
 
 ❓ 2.4. Why setInterval() called twice at an interval ?
 
-✋ 다음 [링크](https://stackoverflow.com/questions/69581697/setinterval-called-twice-at-an-interval-react-js)를 참고하자 * Keyword : StrictMode, useEffect(), class based component
+✋ 다음 [링크](https://stackoverflow.com/questions/69581697/setinterval-called-twice-at-an-interval-react-js)를 참고하자 \* Keyword : StrictMode, useEffect(), class based component
 
-❓ 2.4  `App.js` 에서 `useEffect` 의 역할? 기능?
+❓ 2.4 `App.js` 에서 `useEffect` 의 역할? 기능?
 
-❓ 2.4 `App.js`  `useEffect` 안의 `onAuthStateChanged` 는 왜 user 값이 null 을 반환할 때, 즉 log in / sign in / log out 중 어떤 기능도 수행되지 않았을 때조차 실행되는가?
+⛳ (on Scrum) ❓ 2.4 `App.js` `useEffect` 안의 `onAuthStateChanged` 는 왜 user 값이 null 을 반환할 때, 즉 log in / sign in / log out 중 어떤 기능도 수행되지 않았을 때조차 실행되는가?
+
+⛳ (on Scrum) ❓ 2.4 What is the reason that `onAuthStateChanged`(in the `App.js` `useEffect`) runs even if when `user` value equals to `null`? I think `user` value equals to 'null' indicate that none of the tasks(log in / sign in / log out) were not perforemd, then I think that since `onAuthStateChanged` is a listener for login/ sign in/ log out, it should not be implemented but actually it runs even if so.
 
 ❓ `<form>` 이랑 `<input type="submit">` 에 대해서 잘 알아보자
 
-❓ 아래 코드 js ES6 잘 파악하자
+❓ 아래 코드 js ES6 잘 파악하자. 내 [블로그](https://y00njaekim.github.io/react/input/) 와 비교해보자.
 
 ```react
   const onChange = (e) => {
@@ -65,7 +67,9 @@ const onSubmit = async (event) => {
     } = e;
 ```
 
-❓ 3.1 Home > `onSubmit()` 서브밋 할 때 clear 안되는데 원래 그런건가? 그렇다면 어떻게 클리어 하지?
+⛳ (on Scrum) ❓ 3.1 Home > `onSubmit()` 서브밋 할 때 clear 안되는데 원래 그런건가? 그렇다면 어떻게 클리어 하지?
+
+⛳ (on Scrum) ❓ 3.1 about: Home > `onSubmit()`. When click submit, my <input> texts in a remain intact. Is this supposed to be like that? Or is it just for my case? What is the solution to clear that
 
 ✋ value 값 설정해서 반영해주면 됨. `<input type="text" placeholder="Display name" onChange={onChange} value={newDisplayName}`
 
@@ -96,4 +100,3 @@ const onSubmit = async (event) => {
 ## To Do
 
 ❗ Auth, Routes, Init 등 `App.js` -> `Routers.js` -> ... 등으로 넘어가는 Flow 그리기 (state 상태와 조건문, `useEffect` 등을 적극적으로 고려하며 그리기)
-
