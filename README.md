@@ -26,6 +26,24 @@ none 기억 x 새로고침 하면 바로 로그아웃 됨
 
  <br/>
 
+npm install uui
+
+어떤 식별자를 랜덤으로 생성해줌
+
+<br/>
+
+userobj 라는 state 로 정보통일 이후 특정 component 에서 currentUser profile update 한 이후 상위 컴포넌트에서 받아온 refresh 함수 써서 userobj = currentuser 해주면 전부다 리렌더링
+
+```react
+const onSubmit = async (event) => {
+    event.preventDefault();
+    if (props.userObj.displayName !== newDisplayName) {
+      await fbAuth.updateProfile(fbAuth.getAuth().currentUser, {displayName: newDisplayName});
+      props.refreshUser();
+    }
+  };
+```
+
 ## Questions
 
 ❓ 2.4. Why setInterval() called twice at an interval ?
@@ -49,11 +67,29 @@ none 기억 x 새로고침 하면 바로 로그아웃 됨
 
 ❓ 3.1 Home > `onSubmit()` 서브밋 할 때 clear 안되는데 원래 그런건가? 그렇다면 어떻게 클리어 하지?
 
+✋ value 값 설정해서 반영해주면 됨. `<input type="text" placeholder="Display name" onChange={onChange} value={newDisplayName}`
+
 ❓`setState((prev) => !prev) 같이 인자로 함수 전달하는 경우 잘 살펴보자
 
+❓4.0 Home.js 에서
 
+```react
+  const onFileChange = (event) => {
+    console.log(event.target.files);
+  };
+```
 
+라고 쓰면 파일이 출력 되는데
 
+```react
+  const onFileChange = (event) => {
+    console.log(event.target);
+  };
+```
+
+이라고 치면 파일이 눈꼽만큼도 안보이는게 이해가 안가네
+
+❓`promise` 를 리턴한다는 것은 날 좀 기다려달라는 의미로 await 를 해줘야함??
 
 <br/>
 
