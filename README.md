@@ -100,3 +100,5 @@ const onSubmit = async (event) => {
 ## To Do
 
 ❗ Auth, Routes, Init 등 `App.js` -> `Routers.js` -> ... 등으로 넘어가는 Flow 그리기 (state 상태와 조건문, `useEffect` 등을 적극적으로 고려하며 그리기)
+
+❗ typescript, proptypes 사용하기

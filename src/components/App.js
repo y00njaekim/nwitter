@@ -10,7 +10,7 @@ function App() {
   // console.log(authService.currentUser);
   useEffect(() => {
     const updateProfile = async (user) => {
-      if (user.displayName == null) {
+      if (user.displayName === null || user.displayName === '') {
         const ind = user.email.indexOf('@');
         const end = user.email.substring(0, ind);
         await fbAuth.updateProfile(user, {displayName: end});
@@ -28,6 +28,7 @@ function App() {
         });
       } else {
         setIsLoggedIn(false);
+        setUserObj(null);
       }
       // console.log(user);
       setInit(true);

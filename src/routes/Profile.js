@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {fbAuth, fbStore} from '../fbase';
 import {useHistory} from 'react-router-dom';
+import Nweet from '../components/Nweet';
 
 const Profile = (props) => {
   const [myNweets, setMyNweets] = useState([]);
@@ -10,6 +11,7 @@ const Profile = (props) => {
   const onLogOutClick = () => {
     fbAuth.getAuth().signOut();
     history.push('/');
+    props.refreshUser();
   };
 
   const getMyNweets = async () => {
@@ -47,14 +49,28 @@ const Profile = (props) => {
   };
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <input type="text" placeholder="Display name" onChange={onChange} value={newDisplayName} />
-        <input type="submit" value="Update Profile" />
+    <div className="container">
+      <form onSubmit={onSubmit} className="profileForm">
+        <input type="text" placeholder="Display name" onChange={onChange} value={newDisplayName} autoFocus className="formInput" />
+        <input
+          type="submit"
+          value="Update Profile"
+          className="formBtn"
+          style={{
+            marginTop: 10,
+          }}
+        />
       </form>
       <span>Profile</span>
-      <button onClick={onLogOutClick}>Log Out</button>
-    </>
+      <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
+        Log Out
+      </span>
+      <div>
+        {myNweets.map((nweetObj) => {
+          return <Nweet key={nweetObj.id} nweetObj={nweetObj} isOwner={nweetObj.creatorId === props.userObj.uid}></Nweet>;
+        })}
+      </div>
+    </div>
   );
 };
 
